@@ -1,0 +1,13 @@
+{
+  "name": "generator-web-es6",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Pavel Pomerantsev",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "0.18.6"
+  }
+}
