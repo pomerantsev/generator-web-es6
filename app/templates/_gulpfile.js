@@ -40,7 +40,7 @@ gulp.task('scripts', ['jshint:all'], function () {
   return gulp.src(basePaths.src + folders.scripts + '/**/*.js')
     .pipe($.plumber(notify))
     .pipe($.sourcemaps.init())
-    .pipe($['6to5']())
+    .pipe($.babel())
     .pipe($.sourcemaps.write('./maps'))
     .pipe(gulp.dest(basePaths.dest + folders.scripts))
     .pipe($.connect.reload());
@@ -79,8 +79,8 @@ gulp.task('connect', ['build'], function () {
           connect.static('./bower_components')
         ),
         connect().use(
-          '/6to5',
-          connect.static('./node_modules/gulp-6to5/node_modules/6to5')
+          '/babel',
+          connect.static('./node_modules/gulp-babel/node_modules/babel-core')
         )
       ];
     }
