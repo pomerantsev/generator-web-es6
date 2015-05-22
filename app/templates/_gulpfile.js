@@ -40,7 +40,7 @@ gulp.task('scripts', ['jshint:all'], function () {
   return gulp.src(basePaths.src + folders.scripts + '/**/*.js')
     .pipe($.plumber(notify))
     .pipe($.sourcemaps.init())
-    .pipe($.babel())
+    .pipe($.babel({stage: 1}))
     .pipe($.sourcemaps.write('./maps'))
     .pipe(gulp.dest(basePaths.dest + folders.scripts))
     .pipe($.connect.reload());
